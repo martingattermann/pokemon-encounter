@@ -15,6 +15,11 @@ public class Main {
         entities.Pokemon foundPokemon = pokemonService.findPokemonByName(pokemonName);
         if (foundPokemon != null) {
             System.out.println("Found Pokemon: " + foundPokemon.getName() + " - Type: " + foundPokemon.getTypes());
+            for (Map.Entry<String, Attack> entry : foundPokemon.getLoadingAttacks().entrySet()) {
+                String type = entry.getKey();
+                Attack attack = entry.getValue();
+                System.out.println(type + "=" + attack.getName() + " (Strength: " + attack.getStrength() + ")");
+            }
         } else {
             System.out.println("Pokemon not found.");
         }
