@@ -6,11 +6,11 @@ import java.util.HashMap;
 public class Pokemon {
     private String name;
     private int number;
-    private HashSet<String> types;
+    private HashSet<Type> types;
     private entities.Attack directAttack;
-    private HashMap<String, entities.Attack> loadAttacks;
+    private HashMap<Type, entities.Attack> loadAttacks;
 
-    public Pokemon (String name, int number, HashSet<String> types, entities.Attack directAttack, HashMap<String, entities.Attack> loadAttacks) {
+    public Pokemon (String name, int number, HashSet<Type> types, entities.Attack directAttack, HashMap<Type, entities.Attack> loadAttacks) {
         this.name = name;
         this.number = number;
         this.types = types;
@@ -26,7 +26,7 @@ public class Pokemon {
         return number;
     }
 
-    public HashSet<String> getTypes() {
+    public HashSet<Type> getTypes() {
         return types;
     }
 
@@ -35,7 +35,7 @@ public class Pokemon {
         return directAttack;
     }
 
-    public HashMap<String, entities.Attack> getLoadingAttacks() {
+    public HashMap<Type, entities.Attack> getLoadingAttacks() {
         return loadAttacks;
     }
 }

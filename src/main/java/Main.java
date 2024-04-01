@@ -5,6 +5,7 @@ import entities.Attack;
 import java.util.Scanner;
 import entities.Pokemon;
 import services.PokemonService;
+import entities.Type;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,8 +16,8 @@ public class Main {
         entities.Pokemon foundPokemon = pokemonService.findPokemonByName(pokemonName);
         if (foundPokemon != null) {
             System.out.println("Found Pokemon: " + foundPokemon.getName() + " - Type: " + foundPokemon.getTypes());
-            for (Map.Entry<String, Attack> entry : foundPokemon.getLoadingAttacks().entrySet()) {
-                String type = entry.getKey();
+            for (Map.Entry<Type, Attack> entry : foundPokemon.getLoadingAttacks().entrySet()) {
+                String type = String.valueOf(entry.getKey());
                 Attack attack = entry.getValue();
                 System.out.println(type + "=" + attack.getName() + " (Strength: " + attack.getStrength() + ")");
             }
