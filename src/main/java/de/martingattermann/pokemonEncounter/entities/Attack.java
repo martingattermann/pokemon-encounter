@@ -1,6 +1,4 @@
-package entities;
-
-import java.util.HashSet;
+package de.martingattermann.pokemonEncounter.entities;
 
 public class Attack {
     private String name;

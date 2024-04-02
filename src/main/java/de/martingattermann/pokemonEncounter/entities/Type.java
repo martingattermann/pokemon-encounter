@@ -1,4 +1,4 @@
-package entities;
+package de.martingattermann.pokemonEncounter.entities;
 
 public enum Type {
     FIRE,

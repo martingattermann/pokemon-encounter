@@ -1,4 +1,4 @@
-package entities;
+package de.martingattermann.pokemonEncounter.entities;
 
 import java.util.HashSet;
 import java.util.HashMap;
@@ -7,10 +7,10 @@ public class Pokemon {
     private String name;
     private int number;
     private HashSet<Type> types;
-    private entities.Attack directAttack;
-    private HashMap<Type, entities.Attack> loadAttacks;
+    private Attack directAttack;
+    private HashMap<Type, Attack> loadAttacks;
 
-    public Pokemon (String name, int number, HashSet<Type> types, entities.Attack directAttack, HashMap<Type, entities.Attack> loadAttacks) {
+    public Pokemon (String name, int number, HashSet<Type> types, Attack directAttack, HashMap<Type, Attack> loadAttacks) {
         this.name = name;
         this.number = number;
         this.types = types;
@@ -30,12 +30,12 @@ public class Pokemon {
         return types;
     }
 
-    public entities.Attack getDirectAttack() {
+    public Attack getDirectAttack() {
         //Attack attack = directAttack;
         return directAttack;
     }
 
-    public HashMap<Type, entities.Attack> getLoadingAttacks() {
+    public HashMap<Type, Attack> getLoadingAttacks() {
         return loadAttacks;
     }
 }

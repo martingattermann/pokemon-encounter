@@ -1,11 +1,13 @@
-package services;
+package de.martingattermann.pokemonEncounter.services;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import entities.Pokemon;
-import entities.Attack;
-import entities.Type;
+import de.martingattermann.pokemonEncounter.entities.Pokemon;
+import de.martingattermann.pokemonEncounter.entities.Attack;
+import de.martingattermann.pokemonEncounter.entities.Type;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PokemonService {
     private HashMap<String, Pokemon> pokemonMap;
 
