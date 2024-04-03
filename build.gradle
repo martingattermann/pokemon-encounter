@@ -1,5 +1,8 @@
 plugins {
     id 'java'
+    id "org.flywaydb.flyway" version "10.10.0"
+    id 'org.springframework.boot' version '3.2.4'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'de.martingattermann'
@@ -7,11 +10,27 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://download.red-gate.com/maven/release"
+    }
 }
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.postgresql:postgresql:42.2.23'
+    implementation 'org.flywaydb:flyway-core:10.10.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+flyway {
+    driver = 'org.postgresql.Driver'
+    url = 'jdbc:postgresql://localhost:5432/pokemon'
+    user = 'user'
+    password = 'password'
+    schemas = ['public']
+    defaultSchema = 'public'
 }
 
 test {
