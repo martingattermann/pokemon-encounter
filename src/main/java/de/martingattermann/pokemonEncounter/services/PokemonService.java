@@ -15,12 +15,12 @@ public class PokemonService {
         // Initialize and populate the Pokemon HashMap
         pokemonMap = new HashMap<>();
 
-        HashMap<Type, Attack> loadingAttacks = new HashMap<>();
-        loadingAttacks.put(Type.ELECTRIC, new Attack("Thunderbolt",90));
-        loadingAttacks.put(Type.FIRE, new Attack("Thunderpunch",70));
+        HashSet<Attack> loadingAttacks = new HashSet<>();
+        loadingAttacks.add(new Attack(Type.ELECTRIC, "Thunderbolt",90));
+        loadingAttacks.add(new Attack(Type.ELECTRIC, "Thunderpunch",70));
 
         //Create direct Attack
-        Attack quickAttack = new Attack("Shock", 40);
+        Attack quickAttack = new Attack(Type.ELECTRIC, "Shock", 40);
 
         //Create types
         HashSet<Type> pokemonTypes = new HashSet<>();
@@ -33,7 +33,7 @@ public class PokemonService {
         return pokemonMap.get(name);
     }
 
-    public void createPokemon(String name, int number, HashSet<Type> types, Attack directAttack, HashMap<Type, Attack> loadAttacks) {
+    public void createPokemon(String name, int number, HashSet<Type> types, Attack directAttack, HashSet<Attack> loadAttacks) {
         Pokemon newPokemon = new Pokemon(name, number, types, directAttack, loadAttacks);
         pokemonMap.put(name, newPokemon);
     };

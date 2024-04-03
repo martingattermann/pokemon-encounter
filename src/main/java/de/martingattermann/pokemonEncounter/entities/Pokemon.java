@@ -8,9 +8,9 @@ public class Pokemon {
     private int number;
     private HashSet<Type> types;
     private Attack directAttack;
-    private HashMap<Type, Attack> loadAttacks;
+    private HashSet<Attack> loadAttacks;
 
-    public Pokemon (String name, int number, HashSet<Type> types, Attack directAttack, HashMap<Type, Attack> loadAttacks) {
+    public Pokemon (String name, int number, HashSet<Type> types, Attack directAttack, HashSet<Attack> loadAttacks) {
         this.name = name;
         this.number = number;
         this.types = types;
@@ -35,7 +35,7 @@ public class Pokemon {
         return directAttack;
     }
 
-    public HashMap<Type, Attack> getLoadingAttacks() {
+    public HashSet<Attack> getLoadingAttacks() {
         return loadAttacks;
     }
 }

@@ -3,12 +3,12 @@ package de.martingattermann.pokemonEncounter.entities;
 public class Attack {
     private String name;
     private int strength;
-    //private Type type;
+    private Type type;
 
-    public Attack(String name, int strength) {
+    public Attack(Type type, String name, int strength) {
+        this.type = type;
         this.name = name;
         this.strength = strength;
-        //this.type = type;
     }
 
     public String getName() {
@@ -17,5 +17,9 @@ public class Attack {
 
     public int getStrength() {
         return strength;
+    }
+
+    public Type getType() {
+        return type;
     }
 }
